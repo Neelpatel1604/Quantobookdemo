@@ -25,6 +25,7 @@ export default function MessageList({ messages, isLoading }: MessageListProps) {
     try {
       return formatDistanceToNow(new Date(timestamp), { addSuffix: true });
     } catch (error) {
+      console.error('Error formatting timestamp:', error);
       return '';
     }
   };
