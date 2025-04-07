@@ -45,9 +45,9 @@ export default function MessageInput({ onSend, isLoading = false }: MessageInput
         value={text}
         onChange={(e) => setText(e.target.value)}
         onKeyDown={handleKeyDown}
-        placeholder="Type your message... (Press Enter to send)"
+        placeholder="Type your message..."
         disabled={isLoading}
-        className="pr-24 py-6 bg-white border-gray-300"
+        className="pr-20 md:pr-24 py-4 md:py-6 bg-white border-gray-300 text-sm md:text-base"
       />
       <div className="absolute right-2 top-1/2 -translate-y-1/2 flex space-x-1">
         <Button 
@@ -55,19 +55,19 @@ export default function MessageInput({ onSend, isLoading = false }: MessageInput
           size="icon"
           variant="ghost"
           disabled={isLoading}
-          className="text-gray-500 hover:text-gray-700"
+          className="text-gray-500 hover:text-gray-700 hidden md:flex"
           onClick={() => alert('Voice input coming soon!')}
         >
-          <Mic size={20} />
+          <Mic size={18} />
         </Button>
         <Button 
           type="submit" 
           size="sm"
           disabled={isLoading || !text.trim()}
-          className={`rounded-full px-3 ${text.trim() ? 'bg-blue-500 hover:bg-blue-600' : 'bg-gray-300'}`}
+          className={`rounded-full px-2 md:px-3 h-8 ${text.trim() ? 'bg-blue-500 hover:bg-blue-600' : 'bg-gray-300'}`}
         >
-          <Send size={16} className="mr-1" />
-          {isLoading ? 'Sending...' : 'Send'}
+          <Send size={16} className="mr-0 md:mr-1" />
+          <span className="hidden md:inline">{isLoading ? 'Sending...' : 'Send'}</span>
         </Button>
       </div>
     </form>

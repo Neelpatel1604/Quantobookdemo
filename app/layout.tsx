@@ -1,22 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import Image from "next/image";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
 });
 
 export const metadata: Metadata = {
   title: "QuantoBooks | AI-Powered Bookkeeping",
   description: "Dashboard and Chat Interface for QuantoBooks",
 };
+
 
 export default function RootLayout({
   children,
@@ -26,12 +24,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
+        className={`${inter.variable} font-sans antialiased min-h-screen flex flex-col`}
       >
         <header className="border-b py-4 bg-white">
           <div className="container mx-auto px-4 flex items-center justify-between">
-            <Link href="/" className="font-bold text-xl">
-              QuantoBooks
+            <Link href="/" className="font-bold text-xl text-blue-600 flex items-center gap-2">
+              <Image 
+                src="/quanto-logo.webp" 
+                alt="QuantoBooks Logo" 
+                width={36} 
+                height={36} 
+                className="rounded-sm"
+              />
+              <span>Quanto</span>
             </Link>
             <nav className="flex gap-6">
               <Link href="/dashboard" className="text-gray-600 hover:text-gray-900">
