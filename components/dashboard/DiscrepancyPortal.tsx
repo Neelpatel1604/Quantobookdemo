@@ -14,9 +14,9 @@ interface Discrepancy {
 export default function DiscrepancyPortal() {
   // Placeholder data (would be fetched from API in a real app)
   const [discrepancies, setDiscrepancies] = useState<Discrepancy[]>([
-    { id: 1, date: '2023-04-01', amount: 150.75, status: 'Pending' },
-    { id: 2, date: '2023-04-02', amount: 75.50, status: 'Resolved' },
-    { id: 3, date: '2023-04-05', amount: 210.25, status: 'Under Review' },
+    { id: 1, date: '2025-04-01', amount: 150.75, status: 'Pending' },
+    { id: 2, date: '2025-04-02', amount: 75.50, status: 'Resolved' },
+    { id: 3, date: '2025-04-05', amount: 210.25, status: 'Under Review' },
   ]);
 
   const resolveDiscrepancy = (id: number) => {
